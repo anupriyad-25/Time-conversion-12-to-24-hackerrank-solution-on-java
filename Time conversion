@@ -1,0 +1,25 @@
+Scanner scan = new Scanner(System.in);
+String s=scan.nextLine();
+String time[]=s.split(":");
+        String hour = time[0];
+        String minutes = time[1];
+        String seconds = time[2].substring(0, 2);
+        String mer = time[2].substring(2, 4);
+        if (mer.equals("AM"))
+        {
+            if(hour.equals("12")) //if 12 am
+            {
+                hour="00";
+            }
+        }
+        else
+        {
+            if(!hour.equals("12")) //if not 12 am
+            {
+                int hour1=Integer.parseInt(hour);
+                hour1+=12;
+                hour=Integer.toString(hour1);
+            }
+            }
+        return (hour+":"+minutes+":"+seconds); //if called by function
+//else use system.out.print 
